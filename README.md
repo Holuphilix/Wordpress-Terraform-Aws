@@ -205,6 +205,57 @@ With the files in place, initialize the Terraform project.
    ```bash
    terraform validate
    ```
+#### Step 6: 📁 Project Structure
+This structure separates infrastructure components into dedicated Terraform modules for better maintainability and scalability. Core configuration files reside in the project root, while reusable modules are stored under the modules/ directory.
+
+wordpress-terraform-aws/
+├── .gitignore
+├── README.md
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars
+├── provider.tf
+├── user_data.sh.tpl
+├── modules/
+│   ├── vpc/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── nat_gateway/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── rds/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── efs/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── alb/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── asg/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   └── user_data.sh
+│   ├── bastion/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   ├── security_group/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   └── outputs.tf
+│   └── wordpress/
+│       ├── main.tf
+│       ├── variables.tf
+│       └── outputs.tf
+
 ### Task 2: VPC and Networking Setup
 #### 🎯 Objective  
 Create a **Virtual Private Cloud (VPC)** along with its **subnets**, **routing**, and **security group**, to isolate and secure the WordPress infrastructure. This includes defining public and private subnets across multiple availability zones and configuring secure communication for resources.
@@ -2515,3 +2566,13 @@ git push -u origin main
 **Screenshot:**
 ![Git Push origin Main](./Images/20.Wordpress_git_push_origin.png)
 
+### Author
+
+**Philip Oluwaseyi Oludolamu**
+DevOps Engineer 
+
+* ✉️ Email: [oluphilix@gmail.com](mailto:oluphilix@gmail.com)
+* 🔗 LinkedIn: [linkedin.com/in/philipoludolamu](https://www.linkedin.com/in/philipoludolamu)
+* 📍 Based in Türkiye (Originally from Nigeria)
+
+*Completed on June 27, 2025*
