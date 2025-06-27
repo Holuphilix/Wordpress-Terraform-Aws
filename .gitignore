@@ -1,0 +1,48 @@
+#----------------------------------
+# Terraform
+#----------------------------------
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+.terraform/
+.terraform.lock.hcl
+crash.log
+*.log
+
+#----------------------------------
+# SSH and Key Files
+#----------------------------------
+*.pem
+*.key
+*.crt
+*.pub
+
+# Ignore private key content exported to file
+wordpress-key.pem
+
+#----------------------------------
+# Sensitive Configuration
+#----------------------------------
+*.env
+.envrc
+credentials.json
+secrets.yaml
+
+#----------------------------------
+# Editor & OS Generated
+#----------------------------------
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+*.bak
+*.tmp
+
+#----------------------------------
+# User data or rendered templates
+#----------------------------------
+user_data.sh
+user_data.sh.tpl.bak
+infra-outputs.txt
