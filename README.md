@@ -208,54 +208,55 @@ With the files in place, initialize the Terraform project.
 #### Step 6: 📁 Project Structure
 This structure separates infrastructure components into dedicated Terraform modules for better maintainability and scalability. Core configuration files reside in the project root, while reusable modules are stored under the modules/ directory.
 
-wordpress-terraform-aws/
-├── .gitignore
-├── README.md
-├── main.tf
-├── variables.tf
-├── outputs.tf
-├── terraform.tfvars
-├── provider.tf
-├── user_data.sh.tpl
-├── modules/
-│   ├── vpc/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   ├── nat_gateway/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   ├── rds/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   ├── efs/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   ├── alb/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   ├── asg/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   ├── outputs.tf
-│   │   └── user_data.sh
-│   ├── bastion/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   ├── security_group/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   └── wordpress/
-│       ├── main.tf
-│       ├── variables.tf
-│       └── outputs.tf
-
+```markdown
+- wordpress-terraform-aws/
+  - .gitignore
+  - README.md
+  - main.tf
+  - variables.tf
+  - outputs.tf
+  - terraform.tfvars
+  - provider.tf
+  - user_data.sh.tpl
+  - modules/
+    - vpc/
+      - main.tf
+      - variables.tf
+      - outputs.tf
+    - nat_gateway/
+      - main.tf
+      - variables.tf
+      - outputs.tf
+    - rds/
+      - main.tf
+      - variables.tf
+      - outputs.tf
+    - efs/
+      - main.tf
+      - variables.tf
+      - outputs.tf
+    - alb/
+      - main.tf
+      - variables.tf
+      - outputs.tf
+    - asg/
+      - main.tf
+      - variables.tf
+      - outputs.tf
+      - user_data.sh
+    - bastion/
+      - main.tf
+      - variables.tf
+      - outputs.tf
+    - security_group/
+      - main.tf
+      - variables.tf
+      - outputs.tf
+    - wordpress/
+      - main.tf
+      - variables.tf
+      - outputs.tf
+```
 ### Task 2: VPC and Networking Setup
 #### 🎯 Objective  
 Create a **Virtual Private Cloud (VPC)** along with its **subnets**, **routing**, and **security group**, to isolate and secure the WordPress infrastructure. This includes defining public and private subnets across multiple availability zones and configuring secure communication for resources.
@@ -2253,7 +2254,7 @@ resource "local_file" "private_key_pem" {
   directory_permission = "0700"
 }
 ```
-### ✅ 5. `user_data.sh.tpl`
+#### ✅ 5. `user_data.sh.tpl`
 ```hcl
 #!/bin/bash
 set -e
@@ -2417,7 +2418,7 @@ output "wordpress_sg_id" {
   value       = module.wordpress_sg.security_group_id
 }
 ```
-### ✅ . `.gitignore`
+#### ✅ . `.gitignore`
 ```hcl
 #----------------------------------
 # Terraform
@@ -2542,12 +2543,12 @@ In this step, I will add the website files to the Git repository, configure my g
 __Commands:__
 ```bash
 git add .
-git config --global user.name "YourUsername"
-git config --global user.email "youremail@example.com"
-git commit -m "Initial commit: Add WordPress site template files"
+git config --global user.name "holuphilix"
+git config --global user.email "oluphilix@gmail.com"
+git commit -m "Add complete project documentation and infrastructure setup"
 ```
 **Screenshot:**
-![Git Stage and Commit WordPress Site](./Images/18.WordPress_git_add_commit.png)
+![Git Stage and Commit WordPress Site](./Images/18.git_config.png)
 #### Step 2: Push the code to your Github repository
 After initializing your Git repository and adding your WordPress site template, the next step is to push your code to a remote repository on GitHub. This step is crucial for version control and collaboration.
 - Create a Remote Repository on GitHub: Log into your GitHub account and create a new repository named __WordPress-Terraform-Aws__. Leave the repository empty without initializing it with a README, .gitignore, or license.
@@ -2564,15 +2565,12 @@ git branch -M main
 git push -u origin main
 ```
 **Screenshot:**
-![Git Push origin Main](./Images/20.Wordpress_git_push_origin.png)
+![Git Push origin Main](./Im)
 
 ### Author
-
 **Philip Oluwaseyi Oludolamu**
 DevOps Engineer 
 
 * ✉️ Email: [oluphilix@gmail.com](mailto:oluphilix@gmail.com)
 * 🔗 LinkedIn: [linkedin.com/in/philipoludolamu](https://www.linkedin.com/in/philipoludolamu)
-* 📍 Based in Türkiye (Originally from Nigeria)
-
 *Completed on June 27, 2025*
