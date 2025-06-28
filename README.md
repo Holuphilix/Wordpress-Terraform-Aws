@@ -2565,8 +2565,7 @@ git branch -M main
 git push -u origin main
 ```
 **Screenshot:**
-![Git Push origin Main](./Im)
-
+![Git Push origin Main](./Images/19.git_push_origin.png)
 ### Author
 **Philip Oluwaseyi Oludolamu**
 DevOps Engineer 
